@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll-driven-anmation</title>
+    <style>
+        /* SDA Demo */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.8;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  img {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 25%;
+  }
+} */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    img {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 25%;
+  }
+  }
+}
+/* ETC */
+
+
+img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+li:nth-child(even) {
+  margin-top: 8rem;
+}
+
+li:nth-child(odd):not(:first-child) {
+  margin-top: -4rem;
+}
+
+ul {
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0 1rem;
+  justify-content: center;
+}
+
+/* background colors if images don't show up */
+
+img {
+  background-color: lightblue;
+}
+
+img:nth-child(2) {
+  background-color: yellow;
+}
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+        <li><img src="img/er.jpg" alt="demo-img"></li>
+    </ul>
+</body>
+</html>
